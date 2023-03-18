@@ -58,9 +58,3 @@ textarea {
   background: #131313;
   border-radius: 35px;
 }
-textarea:not(:empty) + .card-1 {
-  background: rgba(19, 19, 19, 0.8);
-  transform: translateY(-0.8em);
-  transition: 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-}

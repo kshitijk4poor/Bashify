@@ -8,7 +8,7 @@ textarea.addEventListener('input', function() {
   } else {
     card1.style.background = '';
     card1.style.transform = '';
-    card1.style.transition = '';
+    card1.style.transition = '0.3s';
     card1.style.border = '';
   }
 });
@@ -19,5 +19,5 @@ textarea.onfocus = function() {
   
   textarea.onblur = function() {
     card1.style.transform = '';
-    card1.style.transition = '';
+    card1.style.transition = '0.3s';
   };

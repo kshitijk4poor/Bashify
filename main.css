@@ -1,0 +1,57 @@
+@font-face {
+  font-family: NeueMontreal;
+  src: url("/assets/NeueMontreal-Bold.otf");
+}
+*:focus {
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+html {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+.container {
+  display: flex;
+  background: black;
+  padding: 1.5em 10em;
+}
+
+textarea {
+  margin: 30px;
+  width: 60vh;
+  height: 82vh;
+  border: none;
+  font-family: "Neue Montreal";
+  font-weight: 700;
+  font-size: 24x;
+  line-height: 29px;
+  color: #F4F5F8;
+  background-color: rgba(0, 0, 0, 0);
+}
+.card-1 {
+  width: 522px;
+  height: 90vh;
+  background: #131313;
+  border-radius: 35px;
+  margin-right: 2.5rem;
+}
+.card-1:hover{
+  background: rgba(19, 19, 19, 0.8);
+  transform: translateY(-0.8em);
+  transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.card-2 {
+  width: 522px;
+  height: 90vh;
+  background: #131313;
+  border-radius: 35px;
+}

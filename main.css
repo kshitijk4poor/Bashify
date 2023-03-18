@@ -16,17 +16,21 @@ html {
   padding: 0;
   background: black;
 }
-
+body{
+  padding: 8em;
+  align-items: center;
+}
 .container {
-  display: flex;
+display: flex;
+justify-content: space-evenly;
   background: black;
-  padding: 1.5em 10em;
+  
 }
 
 textarea {
   margin: 30px;
-  width: 60vh;
-  height: 82vh;
+  width: 26vw;
+  height: 22vh;
   border: none;
   font-family: "Neue Montreal";
   font-weight: 700;
@@ -36,11 +40,10 @@ textarea {
   background-color: rgba(0, 0, 0, 0);
 }
 .card-1 {
-  width: 522px;
-  height: 90vh;
+  width: 30vw;
+  height: 30vh;
   background: #131313;
   border-radius: 35px;
-  margin-right: 2.5rem;
 }
 .card-1:hover{
   background: rgba(19, 19, 19, 0.8);
@@ -50,8 +53,14 @@ textarea {
 }
 
 .card-2 {
-  width: 522px;
-  height: 90vh;
+  width: 30vw;
+  height: 30vh;
   background: #131313;
   border-radius: 35px;
+}
+textarea:not(:empty) + .card-1 {
+  background: rgba(19, 19, 19, 0.8);
+  transform: translateY(-0.8em);
+  transition: 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }

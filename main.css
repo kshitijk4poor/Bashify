@@ -1,6 +1,7 @@
 @font-face {
-  font-family: NeueMontreal;
-  src: url("/assets/NeueMontreal-Bold.otf");
+  font-family: 'Apfel Grotezk';
+  src: url("/assets/ApfelGrotezk-Fett.woff") format("woff");
+  src: url("/assets/ApfelGrotezk-Fett.woff2") format("woff2");
 }
 *:focus {
   outline: none;
@@ -30,14 +31,17 @@ justify-content: space-evenly;
 textarea {
   margin: 30px;
   width: 26vw;
-  height: 22vh;
+  height: 33vh;
   border: none;
-  font-family: "Neue Montreal";
-  font-weight: 700;
-  font-size: 24x;
-  line-height: 29px;
+  font-family: "Apfel Grotezk";
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.7rem;
   color: #F4F5F8;
   background-color: rgba(0, 0, 0, 0);
+}
+textarea::placeholder{
+  color: rgba(255, 255, 255, 0.3);
 }
 .card-1 {
   width: 30vw;

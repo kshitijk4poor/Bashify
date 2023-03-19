@@ -31,7 +31,6 @@ background: linear-gradient(180deg, #FFFFFF 22.95%, #000000 200.82%);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 background-clip: text;
-text-fill-color: transparent;
 }
 h2{
   font-family: 'Apfel Grotesk';
@@ -86,9 +85,11 @@ textarea::placeholder{
   border-radius: 35px;
 }
 .convert{
-  background: linear-gradient(323.23deg, #000000 14.89%, #FFFFFF 111.4%), #1E1E1E;
-background-blend-mode: soft-light, normal;
-border-radius: 35px;
-width: 76px;
-height: 76px;
+  margin-top:15vh;
+  width: 5rem;
+  height: 5rem;  
+  background: linear-gradient(283.96deg, #000000 3.8%, #FFFFFF 109.54%), #1E1E1E;
+  background-blend-mode: soft-light, normal;
+  border-radius: 5rem;
+  border:none;
 }

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Montserrat:wght@600;900&display=swap');
 @font-face {
   font-family: 'Apfel Grotezk';
   src: url("/assets/ApfelGrotezk-Fett.woff") format("woff");
@@ -18,8 +19,31 @@ html {
   background: black;
 }
 body{
-  padding: 8em;
+  padding: 5em;
   align-items: center;
+}
+h1{
+  font-family: 'Lora';
+font-size: 3rem;
+margin:0;
+padding:0;
+background: linear-gradient(180deg, #FFFFFF 22.95%, #000000 200.82%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+h2{
+  font-family: 'Apfel Grotesk';
+font-size: 1.01rem;
+margin:0;
+padding:0;
+color: #A594FD;
+}
+.text{
+  display: flex;
+    margin-bottom: 3.5em;
+    flex-direction: column;
 }
 .container {
 display: flex;
@@ -34,7 +58,6 @@ textarea {
   height: 33vh;
   border: none;
   font-family: "Apfel Grotezk";
-  font-weight: 500;
   font-size: 1rem;
   line-height: 1.7rem;
   color: #F4F5F8;
@@ -61,4 +84,11 @@ textarea::placeholder{
   height: 40vh;
   background: #131313;
   border-radius: 35px;
+}
+.convert{
+  background: linear-gradient(323.23deg, #000000 14.89%, #FFFFFF 111.4%), #1E1E1E;
+background-blend-mode: soft-light, normal;
+border-radius: 35px;
+width: 76px;
+height: 76px;
 }

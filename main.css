@@ -84,12 +84,38 @@ textarea::placeholder{
   background: #131313;
   border-radius: 35px;
 }
+/*
 .convert{
-  margin-top:15vh;
-  width: 5rem;
-  height: 5rem;  
-  background: linear-gradient(283.96deg, #000000 3.8%, #FFFFFF 109.54%), #1E1E1E;
-  background-blend-mode: soft-light, normal;
-  border-radius: 5rem;
-  border:none;
+  margin-top:12vh;
+  width: 4rem;
+  height: 4rem;  
+  background: linear-gradient(130.55deg, #FFFFFF -262.68%, #1E1E1E 54.92%);
+border-radius: 4rem;
+border:none;
+} */
+.convert {
+  margin-top:12vh;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 4rem;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border: 0px;
+  background-image: linear-gradient(130.55deg, #FFFFFF -262.68%, #1E1E1E 54.92%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.convert:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
+.convert:active {
+  transform: scale(0.95);
 }

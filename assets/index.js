@@ -21,3 +21,20 @@ textarea.onfocus = function() {
     card1.style.transform = '';
     card1.style.transition = '0.3s';
   };
+  // OpenAI code
+  const api = new openai.api(process.env.OPENAI_API_KEY);
+  function generateOutput() {
+    const inputText = document.getElementById("input-text").value;
+    api.completions.create({
+      engine: 'text-davinci-002',
+      prompt: `Convert the following query to bash:\n${inputText}`,
+      maxTokens: 1024,
+      n: 1,
+      stop: "\n"
+    }).then((response) => {
+      const outputText = response.choices[0].text.trim();
+      document.getElementById("output-text").value = outputText;
+    }).catch((error) => {
+      console.error(error);
+    });
+  }

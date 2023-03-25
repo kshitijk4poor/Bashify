@@ -22,7 +22,7 @@ textarea.onfocus = function() {
     card1.style.transition = '0.3s';
   };
   // OpenAI code
-  const apiKey = process.env.API_KEY; // retrieve API key from .env
+  const apiKey = process.env.OPENAI_API_KEY; // retrieve API key from .env
 const queryTextarea = document.querySelector('.query#input-text');
 const convertButton = document.querySelector('.convert');
 const outputTextarea = document.querySelector('.output-text');

@@ -23,14 +23,13 @@ textarea.onfocus = function() {
   };
   // OpenAI code
   const apiKey = process.env.API_KEY; // retrieve API key from .env
-
 const queryTextarea = document.querySelector('.query#input-text');
 const convertButton = document.querySelector('.convert');
 const outputTextarea = document.querySelector('.output-text');
 
 convertButton.addEventListener('click', async () => {
   const query = queryTextarea.value;
-
+// Send the request to OpenAI API
   const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
     method: 'POST',
     headers: {
@@ -38,16 +37,23 @@ convertButton.addEventListener('click', async () => {
       'Authorization': `Bearer ${apiKey}`
     },
     body: JSON.stringify({
-      prompt: query,
+      prompt: `Convert the following bash command to code:\n${query}`,
       max_tokens: 1024,
-      temperature: 0.7,
-      n: 1,
-      stop: '\n'
+      temperature: 0.5
     })
   });
-
-  const result = await response.json();
-  const bashScript = result.choices[0].text;
-
-  outputTextarea.value = bashScript;
+// Parse the response
+const data = await response.json();
+  
+// Check if the request was successful
+if (response.ok) {
+  // Retrieve the generated code from the response
+  const code = data.choices[0].text.trim();
+  
+  // Update the output textarea with the generated code
+  outputTextarea.value = code;
+} else {
+  // Show an error message if the request failed
+  alert(`Error: ${data.error.message}`);
+}
 });

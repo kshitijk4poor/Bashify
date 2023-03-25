@@ -22,19 +22,32 @@ textarea.onfocus = function() {
     card1.style.transition = '0.3s';
   };
   // OpenAI code
-  const api = new openai.api(process.env.OPENAI_API_KEY);
-  function generateOutput() {
-    const inputText = document.getElementById("input-text").value;
-    api.completions.create({
-      engine: 'text-davinci-002',
-      prompt: `Convert the following query to bash:\n${inputText}`,
-      maxTokens: 1024,
+  const apiKey = process.env.API_KEY; // retrieve API key from .env
+
+const queryTextarea = document.querySelector('.query#input-text');
+const convertButton = document.querySelector('.convert');
+const outputTextarea = document.querySelector('.output-text');
+
+convertButton.addEventListener('click', async () => {
+  const query = queryTextarea.value;
+
+  const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      prompt: query,
+      max_tokens: 1024,
+      temperature: 0.7,
       n: 1,
-      stop: "\n"
-    }).then((response) => {
-      const outputText = response.choices[0].text.trim();
-      document.getElementById("output-text").value = outputText;
-    }).catch((error) => {
-      console.error(error);
-    });
-  }
+      stop: '\n'
+    })
+  });
+
+  const result = await response.json();
+  const bashScript = result.choices[0].text;
+
+  outputTextarea.value = bashScript;
+});
